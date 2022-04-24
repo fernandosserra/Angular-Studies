@@ -1,1 +1,88 @@
 <h1 class="text-success text-center" >Angular - Diretivas</h1>
+
+<! -- Diretivas de Atributo -->
+
+<div
+[ngStyle]="{background: count < 5 ? 'red' : 'lime' }"
+[ngClass]="{custom: count > 5}"
+>
+    <h3 class="text-center">Contador: {{count}}</h3>
+</div>
+
+<! -- Diretivas Estruturais -->
+
+<! -- If/Else em HTML com Angular -->
+<h2 class ="text-center" *ngIf="count > 6; else menor">O contador passou de 6!</h2>
+
+<ng-template #menor>
+    <h2 class="text-center"> O contador é menor que 6!</h2>
+</ng-template>
+
+
+<! -- Switch Case em HTML com Angular -->
+<ul [ngSwitch]="count" class="list-group mx-auto my-3 col-3 text-center">
+    <li 
+        class="list-group-item"
+        *ngSwitchCase="3"
+    > 
+        É igual a 3!
+    </li>
+    <li 
+        class="list-group-item"
+        *ngSwitchCase="4"
+    > 
+        É igual a 4!
+    </li>
+    <li 
+        class="list-group-item"
+        *ngSwitchCase="5"
+    > 
+        É igual a 5!
+    </li>
+    <li 
+        appMarcaTexto corDeFundo="blue"
+        class="list-group-item"
+        *ngSwitchDefault
+    > 
+        Esse é o Default!
+    </li>
+</ul>
+
+
+<! -- For em HTMl com Angular -->
+<ul class="list-group mx-auto my-3 col-3">
+    <li 
+    class="list-group-item"
+    *ngFor="let idPessoa of pessoas"
+    >
+    O nome da pessoa é {{idPessoa.nome}} {{idPessoa.sobrenome}}.
+    </li>
+</ul>
+
+<hr/>
+
+<ul class="list-group mx-auto my-3 col-3">
+    <ng-template ngFor let-pessoa [ngForOf]="pessoas">
+        <li class="list-group-item">
+            O nome da pessoa é {{pessoa.nome}} {{pessoa.sobrenome}}.
+        </li>
+    </ng-template>
+</ul>
+<hr/>
+<div class="text-center">
+    <button class="btn btn-success text-center"(click)="clicou('Você')">Clique</button>
+</div>
+
+<hr/>
+
+<div class="col-4 mx-auto">
+    <input 
+    type="text" class="form-control" 
+    placeholder="Digite alguma coisa:"
+    [(ngModel)]="myText"
+    >
+    <h4 appMarcaTexto class="text-center">{{myText}}</h4>
+</div>
+
+<hr/>
+
