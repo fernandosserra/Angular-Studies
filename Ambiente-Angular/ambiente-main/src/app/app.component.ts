@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from './shared/services/people.service';
 
 @Component({
   selector: 'app-root',
@@ -10,25 +11,6 @@ export class AppComponent implements OnInit{
 
   myText: string = "";
   
-  pessoas = [
-    {
-      nome: "Melquisedeque",
-      sobrenome: "Taveira"
-    },
-    {
-      nome: "Ananias",
-      sobrenome: "Pacheco"
-    },
-    {
-      nome: "Aloísio",
-      sobrenome: "Romão"
-    },
-    {
-      nome: "Quitéria",
-      sobrenome: "Pires Cavalcante"
-    }
-  ];
-
   constructor(){};
 
   ngOnInit(){
@@ -37,11 +19,11 @@ export class AppComponent implements OnInit{
       if(this.count === 10){
         clearInterval(interval);
       }
-    }, 1000)
-  }
+    }, 1000);    
+  };
 
   clicou(name: string): void {
     console.log(name, 'clicou em mim');
-  }
+  };
 
 }

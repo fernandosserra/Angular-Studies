@@ -18,6 +18,17 @@
     <h2 class="text-center"> O contador é menor que 6!</h2>
 </ng-template>
 
+<hr/>
+
+<app-list-people></app-list-people>
+
+<hr/>
+
+<div class="text-center">
+    <button class="btn btn-success text-center"(click)="clicou('Você')">Clique</button>
+</div>
+
+<hr/>
 
 <! -- Switch Case em HTML com Angular -->
 <ul [ngSwitch]="count" class="list-group mx-auto my-3 col-3 text-center">
@@ -40,38 +51,13 @@
         É igual a 5!
     </li>
     <li 
-        appMarcaTexto corDeFundo="blue"
+        appTextMarkerDrt corDeFundo="blue"
         class="list-group-item"
         *ngSwitchDefault
     > 
         Esse é o Default!
     </li>
 </ul>
-
-
-<! -- For em HTMl com Angular -->
-<ul class="list-group mx-auto my-3 col-3">
-    <li 
-    class="list-group-item"
-    *ngFor="let idPessoa of pessoas"
-    >
-    O nome da pessoa é {{idPessoa.nome}} {{idPessoa.sobrenome}}.
-    </li>
-</ul>
-
-<hr/>
-
-<ul class="list-group mx-auto my-3 col-3">
-    <ng-template ngFor let-pessoa [ngForOf]="pessoas">
-        <li class="list-group-item">
-            O nome da pessoa é {{pessoa.nome}} {{pessoa.sobrenome}}.
-        </li>
-    </ng-template>
-</ul>
-<hr/>
-<div class="text-center">
-    <button class="btn btn-success text-center"(click)="clicou('Você')">Clique</button>
-</div>
 
 <hr/>
 
@@ -81,7 +67,7 @@
     placeholder="Digite alguma coisa:"
     [(ngModel)]="myText"
     >
-    <h4 appMarcaTexto class="text-center">{{myText}}</h4>
+    <h4 appTextMarkerDrt corDeFundo="blue" class="text-center">{{myText}}</h4>
 </div>
 
 <hr/>

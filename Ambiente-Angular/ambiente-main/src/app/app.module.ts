@@ -3,16 +3,18 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { MarcaTextoDirective } from './directives/marca-texto.directive';
+import { TextMarkerDrtDirective } from './shared/directives/text-marker-drt.directive';
+import { ListPeopleComponent } from './shared/components/list-people/list-people.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MarcaTextoDirective
+    TextMarkerDrtDirective,
+    ListPeopleComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]
