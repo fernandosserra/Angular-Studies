@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TextMarkerDrtDirective } from './shared/directives/text-marker-drt.directive';
@@ -16,7 +17,8 @@ import { ListApiComponent } from './shared/components/list-api/list-api.componen
   ],
   imports: [
     BrowserModule,
-    FormsModule,    
+    FormsModule,
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
