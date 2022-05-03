@@ -45,5 +45,6 @@ export class UserService {
 // Lista Usuário Único
   getUniqueUser(id: string): Observable<User[]> {
     return this.httpClient.get<User[]>(`${this.apiURL}/id/${id}`);
+    
   }
 }
