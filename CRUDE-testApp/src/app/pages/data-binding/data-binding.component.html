@@ -1,0 +1,43 @@
+<div class="container d-flex justify-content-center">
+    <h1>{{ retornaNome() }} </h1>
+</div>
+<hr/>
+
+<div class="container d-flex justify-content-center">
+    <img [src]="imageUrl" [alt]="imageDesc">
+</div>
+<hr/>
+
+<div class="container d-flex justify-content-center">
+    <button class="btn btn-danger m-1" (click)="clicou()">Não Clique</button>
+    <button class="btn btn-success m-1" (click)="clicouReverso()" [attr.aria-label]="buttonText">{{ buttonText }}</button>
+</div>
+<hr/>
+
+<div class="container d-flex justify-content-center">
+    <h2 [class.text-red]="textRed">Test Text Test</h2>
+</div>
+
+<div class="container d-flex justify-content-center">
+    <p [style.backgroundColor]="bgColor">Style Binding Test</p>
+</div>
+<hr/>
+
+<section class="d-flex align-items-center justify-content-center flex-wrap">    
+    <input type="text" class="form-control" [(ngModel)]="textInput" placeholder="Digite seu texto aqui!">
+    <p class="text-default justify-content-center">{{ textInput}}</p>
+</section>
+<hr/>
+
+<section class="d-flex align-items-center justify-content-center flex-wrap">
+    <app-button [btnText]="'Enviar'"></app-button>
+    <app-button [btnText]="'Seek and Destroy Components'" (click)="seekAndDestroy()"></app-button>    
+    <app-button [btnText]="'Incrementador'" (click)="incrementor()"></app-button>    
+    <app-button [btnText]="'Child Button'" (clickChild)="clicouNoFilho($event)"></app-button>    
+</section>
+<hr/>
+
+<section class="d-flex align-items-center justify-content-center flex-wrap">
+    <app-life-cycle [number]="numr" *ngIf="!enterSandman"></app-life-cycle>
+</section>
+<hr/>
