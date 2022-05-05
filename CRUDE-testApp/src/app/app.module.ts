@@ -20,6 +20,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
+import { PipesExampleComponent } from './pages/pipes-example/pipes-example.component';
+import { PrintListPipe } from './print-list.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle.component
     TodoListComponent,
     TodoItemComponent,
     ButtonComponent,
-    LifeCycleComponent
+    LifeCycleComponent,
+    PipesExampleComponent,
+    PrintListPipe,
   ],
   imports: [
     BrowserModule,
